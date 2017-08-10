@@ -1,3 +1,5 @@
+import { ReactiveErrors } from '@angular/forms/src/directives/reactive_errors';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -27,6 +29,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     NglModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
