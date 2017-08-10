@@ -10,6 +10,7 @@ import { LaundryComponent } from './modules/laundry/laundry.component';
 
 
 import { AppComponent } from './app.component';
+import { LoadTileComponent } from './Components/load-tile/load-tile.component';
 
 
 // const appRouters: Routes = [
@@ -24,7 +25,8 @@ import { AppComponent } from './app.component';
     AppComponent,
     HomeComponent,
     ClosetComponent,
-    LaundryComponent
+    LaundryComponent,
+    LoadTileComponent
   ],
   imports: [
     BrowserModule,
