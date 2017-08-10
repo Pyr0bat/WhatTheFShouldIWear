@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-closet',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClosetComponent implements OnInit {
 
-  constructor() { }
+  closetForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder
+  ) {
+
+  }
 
   ngOnInit() {
+    this.closetForm = this.fb.group({
+      clothingType: [0],
+    });
   }
 
 }
