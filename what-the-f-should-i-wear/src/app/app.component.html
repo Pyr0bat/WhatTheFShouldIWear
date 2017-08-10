@@ -1,13 +1,67 @@
-<header class="slds-global-header_container">
-  <div class="slds-global-header slds-grid slds-grid--align-spread">
-    <h1>
-      {{title}}!?!?
-    </h1>
+<header class="slds-global-header_container"><a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text_focus">Skip to Navigation</a><a href="javascript:void(0);" class="slds-assistive-text slds-assistive-text_focus">Skip to Main Content</a>
+  <div class="slds-global-header slds-grid slds-grid_align-spread">
+    <div class="slds-global-header__item">
+      <div class="slds-global-header__logo">
+        <img src="/assets/images/logo-noname.svg" alt="">
+      </div>
+    </div>
+    
+    <ul class="slds-global-header__item slds-grid slds-grid_vertical-align-center">
+      <li class="slds-dropdown-trigger slds-dropdown-trigger_click slds-p-horizontal_xxx-small">
+        <button class="slds-button slds-button_icon slds-button_icon slds-button_icon-small slds-button_icon-container slds-button_icon-x-small slds-global-header__button_icon-actions slds-m-horizontal_xx-small" title="Global Actions">
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add"></use>
+          </svg>
+          <span class="slds-assistive-text">Global Actions</span>
+        </button>
+      </li>
+      <li class="slds-dropdown-trigger slds-dropdown-trigger_click">
+        <button class="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Help and Training">
+          <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#question"></use>
+          </svg>
+          <span class="slds-assistive-text">Help and Training</span>
+        </button>
+      </li>
+      <li class="slds-dropdown-trigger slds-dropdown-trigger_click">
+        <button class="slds-button slds-button_icon slds-button_icon slds-button_icon-container slds-button_icon-small slds-global-header__button_icon" title="Setup">
+          <svg class="slds-button__icon slds-global-header__icon" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#setup"></use>
+          </svg>
+          <span class="slds-assistive-text">Setup</span>
+        </button>
+      </li>
+
+      <li class="slds-dropdown-trigger slds-dropdown-trigger_click slds-m-left_x-small">
+        <button class="slds-button" title="person name" aria-haspopup="true">
+          <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
+            <img alt="Person name" src="/assets/images/avatar2.jpg" title="User avatar">
+          </span>
+        </button>
+      </li>
+    </ul>
   </div>
-  <select class="slds-select">
+  <!--<select class="slds-select">
     <option value="SelectOption">Home</option>
     <option value="AddClothes">Edit Closet</option>
     <option value="Laundry">Laundering</option>
     <option value="WhatShouldIWear">What the Fuck should I wear</option>
-  </select>
+  </select>-->
+  <div class="slds-grid slds-grid--vertical-align-center">
+    <button type="button" class="slds-button slds-button--brand" (click)="navCurrentOutfit()">Current Outfit</button>
+    <button type="button" class="slds-button slds-button--brand" (click)="navCloset()">Closet</button>
+    <button type="button" class="slds-button slds-button--brand" (click)="navLaundry()">Laundry</button>
+  </div>
+  <!--Main Component Area -->
+  <div>
+    <div *ngIf='showCurrentOutfit'>
+      <app-home></app-home>
+    </div>
+    <div *ngIf='showCloset === true'>
+      <app-closet></app-closet>
+    </div>
+    <div *ngIf='showLaundry === true'>
+      <app-laundry></app-laundry>
+    </div>
+  </div>
 </header>
