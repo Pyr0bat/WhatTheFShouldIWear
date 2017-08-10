@@ -4,10 +4,27 @@
       {{title}}!?!?
     </h1>
   </div>
-  <select class="slds-select">
+  <!--<select class="slds-select">
     <option value="SelectOption">Home</option>
     <option value="AddClothes">Edit Closet</option>
     <option value="Laundry">Laundering</option>
     <option value="WhatShouldIWear">What the Fuck should I wear</option>
-  </select>
+  </select>-->
+  <div class="slds-grid slds-grid--vertical-align-center">
+    <button type="button" class="slds-button slds-button--brand" (click)="navCurrentOutfit()">Current Outfit</button>
+    <button type="button" class="slds-button slds-button--brand" (click)="navCloset()">Closet</button>
+    <button type="button" class="slds-button slds-button--brand" (click)="navLaundry()">Laundry</button>
+  </div>
+  <!--Main Component Area -->
+  <div>
+    <div *ngIf='showCurrentOutfit'>
+      <app-home></app-home>
+    </div>
+    <div *ngIf='showCloset === true'>
+      <app-closet></app-closet>
+    </div>
+    <div *ngIf='showLaundry === true'>
+      <app-laundry></app-laundry>
+    </div>
+  </div>
 </header>
