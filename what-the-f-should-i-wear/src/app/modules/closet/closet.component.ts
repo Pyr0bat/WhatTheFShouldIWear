@@ -6,6 +6,14 @@ import { ClothingType } from '../../Enums/clothing-type';
 import { ColorId } from '../../Enums/colors';
 import { UnderwearType } from '../../Enums/underwear-type';
 import { SockType } from '../../Enums/sock-type';
+import { ShirtService } from '../../services/shirt-service';
+import { SockService } from '../../services/sock-service';
+import { UnderwearService } from '../../services/underwear-service';
+import { PantsService } from '../../services/pants-service';
+import { TShirt } from '../../Models/t-shirt';
+import { Sock } from '../../Models/sock';
+import { Underwear } from '../../Models/underwear';
+import { Pant } from '../../Models/pant';
 
 @Component({
   selector: 'app-closet',
@@ -24,7 +32,11 @@ export class ClosetComponent implements OnInit {
   selectedClothingSockType: SockType;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private shirtService: ShirtService,
+    private sockService: SockService,
+    private underwearService: UnderwearService,
+    private pantsService: PantsService
   ) {
 
   }
@@ -59,12 +71,45 @@ export class ClosetComponent implements OnInit {
 
 
   addItemToCloset(){
-    console.log("Added your clothing type: ",this.selectedClothingType);
-    console.log("color: ",this.selectedClothingColor);
-    console.log("# of reuses: ",this.selectedClothingNumberOfReuses);
-    console.log("name: ",this.selectedClothingName);
-    console.log("length: ",this.selectedClothingLength);
-    console.log("underwear type: ",this.selectedClothingUnderwearType);
-    console.log("sock type: ",this.selectedClothingSockType);
+    if (this.selectedClothingType === 1) {
+      let newShirt = new TShirt(
+        this.selectedClothingColor,
+        this.selectedClothingNumberOfReuses,
+        this.selectedClothingName,
+        this.selectedClothingLength
+      );
+      this.shirtService.addShirt(newShirt);
+    } else if(this.selectedClothingType === 2) {
+      let newPant = new Pant(
+        this.selectedClothingColor,
+        this.selectedClothingNumberOfReuses,
+        this.selectedClothingName,
+        this.selectedClothingLength
+      );
+      this.pantsService.addPants(newPant);
+    }
+    else if (this.selectedClothingType === 3) {
+      let newUnderwear = new Underwear(
+        this.selectedClothingColor,
+        this.selectedClothingNumberOfReuses,
+        this.selectedClothingName,
+        this.selectedClothingUnderwearType
+      );
+      this.underwearService.addUnderwear(newUnderwear);
+    } else if (this.selectedClothingType === 4) {
+      let newSock = new Sock(
+        this.selectedClothingColor,
+        this.selectedClothingNumberOfReuses,
+        this.selectedClothingName,
+        this.selectedClothingSockType
+      );
+      this.sockService.addSocks(newSock);
+    } else {
+      console.log("Who are you and how did you get here D:");
+    }
+    console.log(this.shirtService.allShirts);
+    console.log(this.pantsService.allPants);
+    console.log(this.sockService.allSocks);
+    console.log(this.underwearService.allUnderwear);
   }
 }
