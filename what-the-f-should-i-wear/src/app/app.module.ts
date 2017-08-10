@@ -5,7 +5,7 @@ import { NglModule } from 'ng-lightning';
 import { HomeComponent } from './modules/home/home.component';
 import { ClosetComponent } from './modules/closet/closet.component';
 import { LaundryComponent } from './modules/laundry/laundry.component';
-//import { WardrobeAssComponent } from './modules/wardrobe-ass/wardrobe-ass.component';
+
 
 import { AppComponent } from './app.component';
 
