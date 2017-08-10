@@ -9,5 +9,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule); // hi chris
-// HI NERD
+platformBrowserDynamic().bootstrapModule(AppModule); 
