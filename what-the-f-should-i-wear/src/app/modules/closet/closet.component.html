@@ -1,6 +1,57 @@
-<div>
-  CLOSET COMPONENT
+<div class="slds">
+  <div class="slds-grid slds-grid--vertical-align-center">
+    <div class="slds-p-right--medium" style="padding-top: 25px; padding-left: 40px">
+      <h1> Select Clothing Type / Color </h1>
+      <form class="slds-m-bottom--large" novalidate [formGroup]="closetForm">
+        <select class="slds--select clothing-types" formControlName="clothingType" (ngModelChange)="clothingTypeChange($event)">
+          <option [ngValue]="1">Shirt</option>
+          <option [ngValue]="2">Pants</option>
+          <option [ngValue]="3">Underwear</option>
+          <option [ngValue]="4">Socks</option>          
+        </select>
+        <select class="slds--select clothing-types" formControlName="clothingColor" (ngModelChange)="clothingColorChange($event)">
+          <option [ngValue]="1">Red</option>
+          <option [ngValue]="2">Orange</option>
+          <option [ngValue]="3">Yellow</option>
+          <option [ngValue]="4">Green</option>          
+          <option [ngValue]="5">Blue</option>
+          <option [ngValue]="6">Indigo</option>
+          <option [ngValue]="7">Violet</option>     
+        </select>
+        <div style="padding-top:25px">
+          # of re-uses<input type="number" formControlName="clothingReuse" class="slds-input" [(ngModel)]="selectedClothingNumberOfReuses"/>
+        </div>
+        <div style="padding-top:25px">
+          Name<input type="text" class="slds-input" formControlName="clothingName" [(ngModel)]="selectedClothingName"/>
+        </div>
+        <div *ngIf="selectedClothingType === 1 || selectedClothingType === 2">
+          <h1 style="padding-top: 25px">Clothing Length</h1>
+          <select class="slds--select clothing-types" formControlName="clothingLength" (ngModelChange)="clothingLengthChange($event)">
+            <option [ngValue]="1">Short</option>
+            <option [ngValue]="2">Long</option>
+          </select>
+        </div>
+        <div *ngIf="selectedClothingType === 3">
+          <h1 style="padding-top: 25px">Underwear Type</h1>
+          <select class="slds--select clothing-types" formControlName="clothingUnderwearType" (ngModelChange)="clothingUnderwearTypeChange($event)">
+            <option [ngValue]="1">Boxer</option>
+            <option [ngValue]="2">Brief</option>
+            <option [ngValue]="3">Both</option>
+          </select>
+        </div>
+        <div *ngIf="selectedClothingType === 4">
+          <h1 style="padding-top: 25px">Sock Type</h1>
+          <select class="slds--select clothing-types" formControlName="clothingSockType" (ngModelChange)="clothingSockTypeChange($event)">
+            <option [ngValue]="1">Casual</option>
+            <option [ngValue]="2">Dress</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-<p>
-  closet works!
-</p>
+<div class="slds">
+  <div style="position:fixed">
+    <button type="button" class="slds-button slds-button--brand" (click)="addItemToCloset()" [disabled]="selectedClothingType === undefined || selectedClothingColor === undefined || selectedClothingNumberOfReuses === undefined || selectedClothingNumberOfReuses === 0 || ((selectedClothingType === 1 || selectedClothingType === 2) && selectedClothingLength === undefined) || (selectedClothingType === 3 && selectedClothingUnderwearType === undefined) || (selectedClothingType === 4 && selectedClothingSockType === undefined)">Add Item</button>
+  </div>
+</div>
