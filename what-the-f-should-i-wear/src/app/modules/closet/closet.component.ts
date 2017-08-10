@@ -8,18 +8,18 @@ import { FormBuilder, FormControl, FormGroup, Validators, FormsModule, ReactiveF
 })
 export class ClosetComponent implements OnInit {
 
-  closetForm: FormGroup;
+  // closetForm: FormGroup;
 
-  constructor(
-    private fb: FormBuilder
-  ) {
+  // constructor(
+  //   private fb: FormBuilder
+  // ) {
 
-  }
+  // }
 
   ngOnInit() {
-    this.closetForm = this.fb.group({
-      clothingType: [0],
-    });
+  //   this.closetForm = this.fb.group({
+  //     clothingType: [0],
+  //   });
   }
 
 }
