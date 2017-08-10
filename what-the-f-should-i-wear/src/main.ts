@@ -1,3 +1,4 @@
+import { TShirt } from './app/Models/t-shirt';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
