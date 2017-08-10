@@ -1,51 +1,59 @@
-
-
 <div class="slds-text-title_caps" style="font-size: 2em; padding: 1em">Today's outfit</div>
-<div class="demo-only" style="width: 320px;">
-  <ul class="slds-has-dividers_around-space">
-    <div>
-      <select class="slds-select" *ngIf='!showShirtCard'>
-        <option value="SelectOption">Select Shirt</option>
-        <option value="AddClothes">Red Shirt</option>
-        <option value="Laundry">Blue Shirt</option>
-        <option value="WhatShouldIWear">Wolf Shirt</option>
-      </select>
-      <li class="slds-item homebutton" *ngIf='showShirtCard'>
+<div class='slds-grid'>
+  <div class="demo-only slds-col" style="width: 160px;">
+    <ul class="slds-has-dividers_around-space">
+      <div>
+        <select class="slds-select" *ngIf='!showShirtCard'>
+          <option value="SelectOption">Select Shirt</option>
+          <option value="AddClothes">Red Shirt</option>
+          <option value="Laundry">Blue Shirt</option>
+          <option value="WhatShouldIWear">Wolf Shirt</option>
+        </select>
+        <li class="slds-item homebutton" *ngIf='showShirtCard'>
+          <article class="slds-tile slds-tile_board">
+            <h3 class="slds-text-heading_medium">Three Moon Wolf Shirt</h3>
+            <div class="slds-tile__detail slds-text-body_small">
+              <p class="slds-text-heading_medium">Color: Black</p>
+              <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Remaining Uses: 1</a></p>
+            </div>
+          </article>
+        </li>
+      </div>    
+      <li class="slds-item homebutton">
         <article class="slds-tile slds-tile_board">
-          <h3 class="slds-text-heading_medium">Three Moon Wolf Shirt</h3>
+          <h3 class="slds-text-heading_medium">Lucky Chonies</h3>
           <div class="slds-tile__detail slds-text-body_small">
-            <p class="slds-text-heading_medium">Color: Black</p>
+            <p class="slds-text-heading_medium">Color: White</p>
             <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Remaining Uses: 1</a></p>
           </div>
         </article>
       </li>
-    </div>    
-    <li class="slds-item homebutton">
-      <article class="slds-tile slds-tile_board">
-        <h3 class="slds-text-heading_medium">Lucky Chonies</h3>
-        <div class="slds-tile__detail slds-text-body_small">
-          <p class="slds-text-heading_medium">Color: White</p>
-          <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Remaining Uses: 1</a></p>
-        </div>
-      </article>
-    </li>
-    <li class="slds-item homebutton">
-      <article class="slds-tile slds-tile_board">
-        <h3 class="slds-text-heading_medium">My Hyphy Levis</h3>
-        <div class="slds-tile__detail slds-text-body_small">
-          <p class="slds-text-heading_medium">Color: Denim</p>
-          <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Remaining Uses: 14</a></p>
-        </div>
-      </article>
-    </li>
-    <li class="slds-item homebutton">
-      <article class="slds-tile slds-tile_board">
-        <h3 class="slds-text-heading_medium">Trusty Gym Socks</h3>
-        <div class="slds-tile__detail slds-text-body_small">
-          <p class="slds-text-heading_medium">Color: White</p>
-          <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Remaining Uses: 1</a></p>
-        </div>
-      </article>
-    </li>
-  </ul>
+      <li class="slds-item homebutton">
+        <article class="slds-tile slds-tile_board">
+          <h3 class="slds-text-heading_medium">My Hyphy Levis</h3>
+          <div class="slds-tile__detail slds-text-body_small">
+            <p class="slds-text-heading_medium">Color: Denim</p>
+            <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Remaining Uses: 14</a></p>
+          </div>
+        </article>
+      </li>
+      <li class="slds-item homebutton">
+        <article class="slds-tile slds-tile_board">
+          <h3 class="slds-text-heading_medium">Trusty Gym Socks</h3>
+          <div class="slds-tile__detail slds-text-body_small">
+            <p class="slds-text-heading_medium">Color: White</p>
+            <p class="slds-truncate" title="Company One"><a href="javascript:void(0);">Remaining Uses: 1</a></p>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </div>
+  <div class="slds-col" style="width: 320px;">
+    <div>
+      <img src="/assets/images/pinksoxfinal.png" alt="" class="sock" />
+      <img src="/assets/images/NakedCharlie.png" alt="" class="charlie"  />
+      <img src="/assets/images/shirtfinal.png" alt="" class="shirt"/>
+      <img src="/assets/images/pantsfinal.png" alt="" class="pants"/>      
+    </div>
+  </div>
 </div>

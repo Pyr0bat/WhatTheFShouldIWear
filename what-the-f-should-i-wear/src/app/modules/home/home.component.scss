@@ -2,3 +2,23 @@
     margin: 4em
 }
 
+img {
+    position: absolute;
+}
+
+.charlie {
+    z-index: 1;
+}
+
+.sock {
+    z-index: 2;
+}
+.shirt {
+    z-index: 5;
+}
+.pants {
+    z-index: 4;
+}
+.underwear {
+    z-index: 3;
+}
