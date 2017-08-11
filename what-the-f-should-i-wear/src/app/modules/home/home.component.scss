@@ -11,16 +11,19 @@ img {
 }
 
 .sock {
-    z-index: 2;
+    z-index: 3;
 }
 .shirt {
-    z-index: 5;
+    z-index: 6;
 }
 .pants {
-    z-index: 4;
+    z-index: 5;
 }
 .underwear {
-    z-index: 3;
+    z-index: 4;
+}
+.censor {
+    z-index:2;
 }
 select {
     max-width: 350px;
