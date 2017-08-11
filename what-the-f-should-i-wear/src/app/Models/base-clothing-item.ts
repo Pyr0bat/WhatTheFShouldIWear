@@ -5,5 +5,6 @@ export class BaseClothingItem {
     public color: ColorId;
     public type: ClothingType;
     public numberOfRemainingUses: number;  
-    public itemName: string;  
+    public itemName: string;
+    public currentRemainingNumberOfUses: number;  
 }

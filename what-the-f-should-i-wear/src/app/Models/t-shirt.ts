@@ -13,5 +13,6 @@ export class TShirt extends BaseClothingItem {
                 this.numberOfRemainingUses = remainingUses;
                 this.itemName = name;
                 this.length = length;
+                this.currentRemainingNumberOfUses = remainingUses;
         }
 }
