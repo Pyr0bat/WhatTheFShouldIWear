@@ -13,5 +13,6 @@ export class Sock extends BaseClothingItem {
                 this.numberOfRemainingUses = remainingUses;
                 this.itemName = name;
                 this.sockType = type;
+                this.currentRemainingNumberOfUses = remainingUses;
         }
 }

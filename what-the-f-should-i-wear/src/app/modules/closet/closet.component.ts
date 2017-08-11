@@ -111,5 +111,18 @@ export class ClosetComponent implements OnInit {
     console.log(this.pantsService.allPants);
     console.log(this.sockService.allSocks);
     console.log(this.underwearService.allUnderwear);
+    this.resetForm();
+  }
+
+  resetForm() {
+    this.closetForm.setValue({
+      clothingType: 0,
+      clothingColor: 0,
+      clothingReuse: 0,
+      clothingName: '',
+      clothingLength: 0,
+      clothingUnderwearType: 0,
+      clothingSockType: 0
+    })
   }
 }
