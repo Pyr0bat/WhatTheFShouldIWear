@@ -1,7 +1,59 @@
 <div class="slds-text-title_caps" style="font-size: 2em; padding: 1em">Laundry Loads</div>
-<div class="container"></div>
+<!--<div class="container"></div>
 <div class="wrapper">
   <div class="box a"></div>
   <div class="box b"><app-load-tile></app-load-tile><app-load-tile></app-load-tile><app-load-tile></app-load-tile></div>
   <div class="box c"></div>
+</div>-->
+
+<!--<div >
+  Red Laundry Bin
+  <div *ngFor="let redClothes of this.redBin; let i = index">
+    {{redBin[i].clothingItem.itemName}}
+</div>-->
+<!--<div *ngFor="let hero of heroes; let i=index">{{i + 1}} - {{hero.name}}</div>-->
+<!--<option *ngFor="let pants of this.pantsService.allPants; let i = index" [ngValue]="i">{{pants.itemName}} </option>-->
+<!--<div>Yellow bin
+<div>
+  {{this.laundryService.yellowBin.length}}
+  <ul>
+    <li *ngFor="let yellow of this.laundryService.yellowBin">{{yellow.clothingItem.itemName}}</li>
+  </ul>
+</div>-->
+<div class="slds-grid slds-grid_vertical-align-center">
+  <div class="slds-col" *ngIf="this.laundryService.redBin.length > 0"> Red Bin
+    <ol class="slds-list_ordered">
+      <li *ngFor="let red of this.laundryService.redBin">{{red.clothingItem.itemName}}</li>
+    </ol>
+  </div>
+  <div class="slds-col" *ngIf="this.laundryService.orangeBin.length > 0"> orange Bin
+    <ol class="slds-list_ordered">
+      <li *ngFor="let orange of this.laundryService.orangeBin">{{orange.clothingItem.itemName}}</li>
+    </ol>
+  </div>
+  <div class="slds-col" *ngIf="this.laundryService.yellowBin.length > 0"> Yellow Bin
+    <ol class="slds-list_ordered">
+      <li *ngFor="let yellow of this.laundryService.yellowBin">{{yellow.clothingItem.itemName}}</li>
+    </ol>
+  </div>
+  <div class="slds-col" *ngIf="this.laundryService.greenBin.length > 0"> Green Bin
+    <ol class="slds-list_ordered">
+      <li *ngFor="let green of this.laundryService.greenBin">{{green.clothingItem.itemName}}</li>
+    </ol>
+  </div>
+  <div class="slds-col" *ngIf="this.laundryService.blueBin.length > 0"> Blue Bin
+    <ol class="slds-list_ordered">
+      <li *ngFor="let blue of this.laundryService.blueBin">{{blue.clothingItem.itemName}}</li>
+    </ol>
+  </div>
+  <div class="slds-col" *ngIf="this.laundryService.indigoBin.length > 0"> IndigoBin Bin
+    <ol class="slds-list_ordered">
+      <li *ngFor="let indigo of this.laundryService.indigoBin">{{indigo.clothingItem.itemName}}</li>
+    </ol>
+  </div>
+  <div class="slds-col" *ngIf="this.laundryService.violetBin.length > 0"> Violet Bin
+    <ol class="slds-list_ordered">
+      <li *ngFor="let violet of this.laundryService.violetBin">{{violet.clothingItem.itemName}}</li>
+    </ol>
+  </div>
 </div>

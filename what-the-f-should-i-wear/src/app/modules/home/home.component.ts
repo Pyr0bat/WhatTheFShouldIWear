@@ -1,3 +1,4 @@
+import { DankRating } from '../../Enums/dank-rating';
 import { ClothingType } from '../../Enums/clothing-type';
 import { BaseClothingItem } from '../../Models/base-clothing-item';
 import { LaundryService, InLaundryClothingItem } from '../../services/laundry-service';
@@ -35,6 +36,7 @@ export class HomeComponent implements OnInit {
   currentSocks: Sock;
   currentCleanlinessValue: number;
   showLoadExampleCloset: boolean;
+  dankRating: DankRating;
   
   clothingTypeNames: string[] = ["Shirt", "Pants", "Underwear", "Socks"];
   clothingColorNames: string[] = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"];
@@ -133,6 +135,19 @@ export class HomeComponent implements OnInit {
 
     this.currentCleanlinessValue = (sumOfRemainingUses/maxRemaningUses) * 100;
     console.log("currentCleanlinessValue = " + this.currentCleanlinessValue);
+
+    if(this.currentCleanlinessValue > 0 && this.currentCleanlinessValue < 25){
+      this.dankRating = 1;
+    }
+    if(this.currentCleanlinessValue >= 25 && this.currentCleanlinessValue < 50){
+      this.dankRating = 2;
+    }
+    if(this.currentCleanlinessValue >= 50 && this.currentCleanlinessValue < 75){
+      this.dankRating = 3;
+    }
+    if(this.currentCleanlinessValue >=75 && this.currentCleanlinessValue <=100){
+      this.dankRating = 4;
+    }
   }
 /**
  * IMPORTANT: Had to pass in the 'current' item delcared here instead of the array value ref because kept being undefined
@@ -259,6 +274,22 @@ export class HomeComponent implements OnInit {
     this.pantsService.addPants(indigoPants);
     this.sockService.addSocks(violetSocks);
     this.sockService.addSocks(redSocks);
+  }
+
+  hideSocksCard() {
+    this.showSocksCard = false;
+  }
+
+  hideShirtCard() {
+    this.showShirtCard = false;
+  }
+
+  hidePantsCard() {
+    this.showPantsCard = false;
+  }
+
+  hideUnderwearCard() {
+    this.showUnderwearCard = false;
   }
 
 }
