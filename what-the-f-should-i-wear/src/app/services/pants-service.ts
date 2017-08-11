@@ -8,4 +8,10 @@ export class PantsService {
     addPants(pants: Pant) {
         this.allPants.push(pants);
     }
+
+    // findPants(pants: Pant) {
+    //     for(let i in this.allPants){
+    //         if()
+    //     }
+    // }
 }

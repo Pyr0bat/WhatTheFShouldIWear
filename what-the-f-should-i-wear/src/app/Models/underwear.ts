@@ -14,5 +14,6 @@ export class Underwear extends BaseClothingItem {
                 this.itemName = name;
                 this.underwearType = type;
                 this.currentRemainingNumberOfUses = remainingUses;
+                this.isInLaundry = false;
         }
 }

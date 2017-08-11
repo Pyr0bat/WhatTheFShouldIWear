@@ -77,6 +77,8 @@
         </div>
       </form>
     </ul>
+    <button type="button" class="slds-button slds-button--brand" (click)="confirmSelection()"> Confirm Selection </button>
+    <button type="button" class="slds-button slds-button--brand" (click)="loadClothes()" *ngIf="showLoadExampleCloset"> Load Example Closet </button>
   </div>
   <div class="slds-col" style="width: 320px;">
     <div class="slds-grid slds-grid_vertical-align-center">

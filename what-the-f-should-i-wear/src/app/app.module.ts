@@ -1,3 +1,4 @@
+import { LaundryService } from './services/laundry-service';
 import { ReactiveErrors } from '@angular/forms/src/directives/reactive_errors';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -42,7 +43,8 @@ import { LoadTileComponent } from './Components/load-tile/load-tile.component';
     ShirtService,
     SockService,
     UnderwearService,
-    PantsService
+    PantsService,
+    LaundryService
   ],
   bootstrap: [AppComponent]
 

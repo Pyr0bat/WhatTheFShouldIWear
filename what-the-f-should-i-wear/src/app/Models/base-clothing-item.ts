@@ -6,5 +6,6 @@ export class BaseClothingItem {
     public type: ClothingType;
     public numberOfRemainingUses: number;  
     public itemName: string;
-    public currentRemainingNumberOfUses: number;  
+    public currentRemainingNumberOfUses: number;
+    public isInLaundry: boolean;  
 }
