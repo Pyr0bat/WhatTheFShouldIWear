@@ -32,6 +32,12 @@ export class HomeComponent implements OnInit {
   currentSocks: Sock;
   currentCleanlinessValue: number;
   
+  clothingTypeNames: string[] = ["Shirt", "Pants", "Underwear", "Socks"];
+  clothingColorNames: string[] = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"];
+  clothingLengthTypeNames: string[] = ["Short", "Long"];
+  clothingSockTypeNames: string[] = ["Casual", "Formal"];
+  clothingUnderwearTypeNames: string[] = ["Boxers", "Briefs", "Both"];
+
   constructor(
     private fb: FormBuilder,
     private shirtService: ShirtService,
