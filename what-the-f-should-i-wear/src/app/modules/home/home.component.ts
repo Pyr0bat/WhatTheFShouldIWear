@@ -257,39 +257,68 @@ export class HomeComponent implements OnInit {
 
   loadClothes(){
     this.showLoadExampleCloset = false;
-    let redshirt = new TShirt(1,3,"test red shirt", 1);
-    let orangeshirt = new TShirt(2,3,"test orange shirt", 2);
-    let yellowUnderwear = new Underwear(3,1,"test yellow underwear", 1);
-    let greenUnderwear = new Underwear(4,1,"test green underwear", 2);
-    let bluePants = new Pant(5,5,"test blue pants", 1);
-    let indigoPants = new Pant(6,5,"test indigo pants", 2);
-    let violetSocks = new Sock(7,1,"test violet socks", 1);
-    let redSocks = new Sock(1,1,"test red SOCKS", 2);
+    // let redshirt = new TShirt(1,3,"test red shirt", 1);
+    // let orangeshirt = new TShirt(2,3,"test orange shirt", 2);
+    // let yellowUnderwear = new Underwear(3,1,"test yellow underwear", 1);
+    // let greenUnderwear = new Underwear(4,1,"test green underwear", 2);
+    // let bluePants = new Pant(5,5,"test blue pants", 1);
+    // let indigoPants = new Pant(6,5,"test indigo pants", 2);
+    // let violetSocks = new Sock(7,1,"test violet socks", 1);
+    // let redSocks = new Sock(1,1,"test red SOCKS", 2);
 
-    this.shirtService.addShirt(redshirt);
-    this.shirtService.addShirt(orangeshirt);
-    this.underwearService.addUnderwear(yellowUnderwear);
-    this.underwearService.addUnderwear(greenUnderwear);
-    this.pantsService.addPants(bluePants);
-    this.pantsService.addPants(indigoPants);
-    this.sockService.addSocks(violetSocks);
-    this.sockService.addSocks(redSocks);
+    // this.shirtService.addShirt(redshirt);
+    // this.shirtService.addShirt(orangeshirt);
+    // this.underwearService.addUnderwear(yellowUnderwear);
+    // this.underwearService.addUnderwear(greenUnderwear);
+    // this.pantsService.addPants(bluePants);
+    // this.pantsService.addPants(indigoPants);
+    // this.sockService.addSocks(violetSocks);
+    // this.sockService.addSocks(redSocks);
+
+    let boxers = new Underwear(5,1,"Blue Boxers",1);
+    let courtneySpecial = new TShirt(3,3,"The Roldenkl Special", 1);
+    let dressSocks = new Sock(7,2,"Fancy Socks", 2);
+    let elephantChonies = new Underwear(4, 1,"Elephant Chonies", 2);
+    let longSleeveShirt = new TShirt(2,5,"Orange Shirt", 2);
+    let pants = new Pant(5,5,"Blue Pants", 2);
+    let pinkSocks = new Sock(1,2,"Pink Socks",1);
+    let redShirt = new TShirt(1,4,"Red Shirt",1);
+    let shorts = new Pant(3,5,"Cargo Shorts",1);
+    let whities = new Underwear(6,1,"Whities",2);
+    let wolfShirt = new TShirt(4,4,"Wolf Pack",1);
+
+    this.underwearService.addUnderwear(boxers);
+    this.shirtService.addShirt(courtneySpecial);
+    this.sockService.addSocks(dressSocks);
+    this.underwearService.addUnderwear(elephantChonies);
+    this.shirtService.addShirt(longSleeveShirt);
+    this.pantsService.addPants(pants);
+    this.sockService.addSocks(pinkSocks);
+    this.shirtService.addShirt(redShirt);
+    this.pantsService.addPants(shorts);
+    this.underwearService.addUnderwear(whities);
+    this.shirtService.addShirt(wolfShirt);
+
   }
 
   hideSocksCard() {
     this.showSocksCard = false;
+    this.currentSocks = null;
   }
 
   hideShirtCard() {
     this.showShirtCard = false;
+    this.currentShirt = null;
   }
 
   hidePantsCard() {
     this.showPantsCard = false;
+    this.currentPants = null;;
   }
 
   hideUnderwearCard() {
     this.showUnderwearCard = false;
+    this.currentUnderwear = null;
   }
 
 }

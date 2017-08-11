@@ -107,12 +107,54 @@
   <div class="slds-col" style="width: 320px;">
     <div class="slds-grid slds-grid_vertical-align-center">
       <div class="slds-col">
-      <img src="/assets/images/pinksoxfinal.png" alt="" class="sock" />
-      <img src="/assets/images/NakedCharlie.png" alt="" class="charlie"  />
-      <img src="/assets/images/shirtfinal.png" alt="" class="shirt"/>
-      <img src="/assets/images/pantsfinal.png" alt="" class="pants"/>    
+      <img src="/assets/images/NakedCharlie.png" alt="" class="charlie"/>
+      
+      <div *ngIf="this.currentShirt?.itemName === 'Red Shirt'">
+        <img src="/assets/images/shirtfinal.png" alt="" class="shirt"/>
       </div>
-      <div class="slds-col .slds-text-heading_medium">
+
+      <div *ngIf="this.currentShirt?.itemName === 'The Roldenkl Special'">
+        <img src="/assets/images/CourtneyspecialFinal.png" alt="" class="shirt"/>
+      </div>
+
+      <div *ngIf="this.currentShirt?.itemName === 'Orange Shirt'">
+        <img src="/assets/images/longsleevefinal.png" alt="" class="shirt"/>
+      </div>
+
+      <div *ngIf="this.currentShirt?.itemName === 'Wolf Pack'">
+        <img src="/assets/images/WolfShirtFinal.png" alt="" class="shirt"/>
+      </div>
+
+      <div *ngIf="this.currentPants?.itemName === 'Blue Pants'">
+        <img src="/assets/images/pantsfinal.png" alt="" class="pants"/>
+      </div>
+
+      <div *ngIf="this.currentPants?.itemName === 'Cargo Shorts'">     
+        <img src="/assets/images/shortsfinal.png" alt="" class="pants"/>
+      </div>
+
+      <div *ngIf="this.currentUnderwear?.itemName === 'Blue Boxers'">
+        <img src="/assets/images/boxersfinal.png" class="underwear"/>
+      </div>
+
+      <div *ngIf="this.currentUnderwear?.itemName === 'Elephant Chonies'">
+        <img src="/assets/images/elephantchoniesfinal.png" class="underwear"/>
+      </div>
+
+      <div *ngIf="this.currentUnderwear?.itemName ==='Whities'">
+        <img src="/assets/images/underwearFinal.png" class="underwear"/>
+      </div>
+
+      <div *ngIf="this.currentSocks?.itemName === 'Pink Socks'">
+        <img src="/assets/images/pinksoxfinal.png" alt="" class="sock" /> 
+      </div>
+
+      <div *ngIf="this.currentSocks?.itemName === 'Fancy Socks'"> 
+        <img src="/assets/images/dressSoxfinal.png" alt="" class="sock" />
+      </div>  
+
+      </div>
+      <div class=".slds-text-heading_medium slds-col ">
          Cleanliness Rating: {{this.currentCleanlinessValue}}%
          <div *ngIf='dankRating === 1'>
          <img src="/assets/images/FilthyAnimal.png" alt=""/>
