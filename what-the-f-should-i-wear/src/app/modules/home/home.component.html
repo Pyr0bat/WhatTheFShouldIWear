@@ -9,60 +9,72 @@
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearShirt()"> Ok </button>
         </div>
-        <li class="slds-item homebutton" *ngIf='showShirtCard'>
-          <article class="slds-tile slds-tile_board">
-            <h3 class="slds-text-heading_medium">{{this.currentShirt.itemName}}</h3>
-            <div class="slds-tile__detail slds-text-body_small">
-              <p class="slds-text-heading_medium">{{this.currentShirt.color}}</p>
-              <p class="slds-truncate" ><a href="javascript:void(0);">{{this.currentShirt.numberOfRemainingUses}}</a></p>
-            </div>
-          </article>
-        </li>
+        <div *ngIf="showShirtCard">
+          <li class="slds-border slds-item homebutton " >
+            <article class="slds-tile slds-tile_board">
+              <h3 class="slds-text-heading_medium">Name: {{this.currentShirt.itemName}}</h3>
+              <div class="slds-tile__detail slds-text-body_small">
+                <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentShirt.color-1]}} 
+                <p class="slds-text-heading_medium">Length: {{this.clothingLengthTypeNames[this.currentShirt.length-1]}} </p>
+                <p class="slds-truncate" ><a href="javascript:void(0);">Remaining Uses: {{this.currentShirt.numberOfRemainingUses}}</a></p>
+              </div>
+            </article>
+          </li>
+        </div>
         <div *ngIf="!showPantsCard">
           <select class="slds-select" formControlName="pantsList" (ngModelChange)="updatePantsIndex($event)">
             <option *ngFor="let pants of this.pantsService.allPants; let i = index" [ngValue]="i">{{pants.itemName}} </option>
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearPants()"> Ok </button>
         </div>
-        <li class="slds-item homebutton" *ngIf='showPantsCard'>
-          <article class="slds-tile slds-tile_board">
-            <h3 class="slds-text-heading_medium">{{this.currentPants.itemName}}</h3>
-            <div class="slds-tile__detail slds-text-body_small">
-              <p class="slds-text-heading_medium">{{this.currentPants.color}}</p>
-              <p class="slds-truncate" ><a href="javascript:void(0);">{{this.currentPants.numberOfRemainingUses}}</a></p>
-            </div>
-          </article>
-        </li>
+        <div  *ngIf="showPantsCard">
+          <li class="slds-item homebutton">
+            <article class="slds-tile slds-tile_board">
+              <h3 class="slds-text-heading_medium">{{this.currentPants.itemName}}</h3>
+              <div class="slds-tile__detail slds-text-body_small">
+                <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentPants.color-1]}} 
+                <p class="slds-text-heading_medium">Length: {{this.clothingLengthTypeNames[this.currentPants.length-1]}} </p>
+                <p class="slds-truncate" ><a href="javascript:void(0);">Remaining Uses: {{this.currentPants.numberOfRemainingUses}}</a></p>
+              </div>
+            </article>
+          </li>
+        </div>
         <div *ngIf="!showUnderwearCard">
           <select class="slds-select" formControlName="underwearList" (ngModelChange)="updateUnderwearIndex($event)">
             <option *ngFor="let underwear of this.underwearService.allUnderwear; let i = index" [ngValue]="i">{{underwear.itemName}} </option>
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearUnderwear()"> Ok </button>
         </div>
-        <li class="slds-item homebutton" *ngIf='showUnderwearCard'>
-          <article class="slds-tile slds-tile_board">
-            <h3 class="slds-text-heading_medium">{{this.currentUnderwear.itemName}}</h3>
-            <div class="slds-tile__detail slds-text-body_small">
-              <p class="slds-text-heading_medium">{{this.currentUnderwear.color}}</p>
-              <p class="slds-truncate"><a href="javascript:void(0);">{{this.currentUnderwear.numberOfRemainingUses}}</a></p>
-            </div>
-          </article>
-        </li>
-        <div *ngIf="!showSSocksCard">
+        <div *ngIf="showUnderwearCard">
+          <li class="slds-item homebutton" >
+            <article class="slds-tile slds-tile_board">
+              <h3 class="slds-text-heading_medium">{{this.currentUnderwear.itemName}}</h3>
+              <div class="slds-tile__detail slds-text-body_small">
+                <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentUnderwear.color-1]}}
+                <p class="slds-text-heading_medium">Type: {{this.clothingUnderwearTypeNames[this.currentUnderwear.underwearType-1]}} </p>
+                <p class="slds-truncate"><a href="javascript:void(0);">Remaining Uses: {{this.currentUnderwear.numberOfRemainingUses}}</a></p>
+              </div>
+            </article>
+          </li>
+        </div>
+        <div *ngIf="!showSocksCard">
           <select class="slds-select" formControlName="sockList" (ngModelChange)="updateSocksIndex($event)">
             <option *ngFor="let socks of this.sockService.allSocks; let i = index" [ngValue]="i">{{socks.itemName}} </option>
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearSocks()"> Ok </button>
         </div>
-        <li class="slds-item homebutton" *ngIf='showSocksCard'>
-          <article class="slds-tile slds-tile_board">
-            <h3 class="slds-text-heading_medium">{{this.currentSocks.itemName}}</h3>
-            <div class="slds-tile__detail slds-text-body_small">
-              <p class="slds-text-heading_medium">{{this.currentSocks.color}}</p>
-              <p class="slds-truncate"><a href="javascript:void(0);">{{this.currentSocks.numberOfRemainingUses}}</a></p>
-            </div>
-          </article>
-        </li>
+        <div *ngIf="showSocksCard">
+          <li class="slds-item homebutton" >
+            <article class="slds-tile slds-tile_board">
+              <h3 class="slds-text-heading_medium">{{this.currentSocks.itemName}}</h3>
+              <div class="slds-tile__detail slds-text-body_small">
+                <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentSocks.color-1]}} </p>
+                <p class="slds-text-heading_medium">Type: {{this.clothingSockTypeNames[this.currentSocks.sockType-1]}} </p>
+                <p class="slds-truncate"><a href="javascript:void(0);">Remaining Uses: {{this.currentSocks.numberOfRemainingUses}}</a></p>
+              </div>
+            </article>
+          </li>
+        </div>
       </form>
     </ul>
   </div>
