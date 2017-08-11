@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShirtService } from '../../services/shirt-service';
+import { SockService } from '../../services/sock-service';
+import { UnderwearService } from '../../services/underwear-service';
+import { PantsService } from '../../services/pants-service';
+import { TShirt } from '../../Models/t-shirt';
+import { Sock } from '../../Models/sock';
+import { Underwear } from '../../Models/underwear';
+import { Pant } from '../../Models/pant';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +17,67 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  outfitForm: FormGroup;
+  showShirtCard = false;
+  showPantsCard = false;
+  showSocksCard = false;
+  showUnderwearCard = false;
+  selectedShirtIndex = 0;
+  selectedPantsIndex = 0;
+  selectedUnderwearIndex = 0;
+  selectedSocksIndex = 0;
+  currentShirt: TShirt;
+  currentPants: Pant;
+  currentUnderwear: Underwear;
+  currentSocks: Sock;
+  
+  constructor(
+    private fb: FormBuilder,
+    private shirtService: ShirtService,
+    private sockService: SockService,
+    private underwearService: UnderwearService,
+    private pantsService: PantsService
+  ) {
 
-  ngOnInit() {
   }
 
-  showShirt = false;
+  ngOnInit() {
+    this.outfitForm = this.fb.group({
+      shirtList: [0],
+      pantsList: [0],
+      underwearList: [0],
+      sockList: [0]
+    })
+  }
 
+
+  updateShirtIndex(i:number) {
+    this.selectedShirtIndex = i;
+  }
+  updatePantsIndex(i:number) {
+    this.selectedPantsIndex = i;
+  }
+  updateUnderwearIndex(i:number) {
+    this.selectedUnderwearIndex = i;
+  }
+  updateSocksIndex(i:number) {
+    this.selectedSocksIndex = i;
+  }
+
+  wearShirt() { 
+    this.showShirtCard = true;
+    this.currentShirt = this.shirtService.allShirts[this.selectedShirtIndex];
+  }
+  wearPants() {
+    this.showPantsCard = true;
+    this.currentPants = this.pantsService.allPants[this.selectedPantsIndex];
+  }
+  wearUnderwear() {
+    this.showUnderwearCard = true;
+    this.currentUnderwear = this.underwearService.allUnderwear[this.selectedUnderwearIndex];
+  }
+  wearSocks() {
+    this.showSocksCard = true;
+    this.currentSocks = this.sockService.allSocks[this.selectedSocksIndex];
+  } 
 }
