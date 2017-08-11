@@ -135,7 +135,7 @@ export class HomeComponent implements OnInit {
 
     this.currentCleanlinessValue = (sumOfRemainingUses/maxRemaningUses) * 100;
     console.log("currentCleanlinessValue = " + this.currentCleanlinessValue);
-
+    this.currentCleanlinessValue = +this.currentCleanlinessValue.toPrecision(6);
     if(this.currentCleanlinessValue > 0 && this.currentCleanlinessValue < 25){
       this.dankRating = 1;
     }

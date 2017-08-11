@@ -2,14 +2,14 @@
 <div class="slds-grid">
   <div class="demo-only slds-col" style="width: 320px;">
     <ul class="slds-has-dividers_around-space">
-      <form class="slds-m-bottom--large outfit-form" novalidate [formGroup]="outfitForm">
+      <form class="slds-m-bottom--large outfit-form" novalidate [formGroup]="outfitForm" style="padding-left: 25px;">
         <div *ngIf="!showShirtCard">
           <select class="slds-select" formControlName="shirtList" (ngModelChange)="updateShirtIndex($event)" >
             <option *ngFor="let shirt of this.shirtService.allShirts; let i = index" [ngValue]="i" >{{shirt.itemName}} </option>
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearShirt()"> Ok </button>
         </div>
-        <div class="slds-grid" *ngIf="showShirtCard">
+        <div class="slds-grid"  style="height:1.8in;" *ngIf="showShirtCard">
           <div class='slds-col'>
           <li class="slds-border slds-item homebutton " >
             <article class="slds-tile slds-tile_board">
@@ -18,13 +18,13 @@
                 <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentShirt.color-1]}} 
                 <p class="slds-text-heading_medium">Length: {{this.clothingLengthTypeNames[this.currentShirt.length-1]}} </p>
                 <p class="slds-truncate" >Maximum Uses: {{this.shirtService.allShirts[this.selectedShirtIndex].numberOfRemainingUses}}</p>
-                <p class="slds-truncate" >Remaining Uses: {{this.shirtService.allShirts[this.selectedShirtIndex].currentRemainingNumberOfUses}}</p>
+                <p class="slds-truncate" >Remaining Uses: {{this.currentShirt.currentRemainingNumberOfUses}} out of {{this.currentShirt.numberOfRemainingUses}}}}</p>
               </div>
             </article>
           </li>
           </div>
           <div class='slds-col'>
-            <button type="button" class="slds-button slds-button--brand" (click)="hideShirtCard()"> Remove Shirt Selection </button>
+            <button type="button" class="slds-button slds-button--brand" style="position:relative; top:80px; left:-250px;" (click)="hideShirtCard()"> Remove Shirt Selection </button>
           </div>
         </div>
         <div *ngIf="!showPantsCard">
@@ -33,7 +33,7 @@
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearPants()"> Ok </button>
         </div>
-        <div class="slds-grid" *ngIf="showPantsCard">
+        <div class="slds-grid" style="height:1.8in;"  *ngIf="showPantsCard">
           <div class='slds-col'>          
           <li class="slds-item homebutton">
             <article class="slds-tile slds-tile_board">
@@ -42,13 +42,13 @@
                 <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentPants.color-1]}} 
                 <p class="slds-text-heading_medium">Length: {{this.clothingLengthTypeNames[this.currentPants.length-1]}} </p>
                 <p class="slds-truncate"> Maximum Uses: {{this.pantsService.allPants[this.selectedPantsIndex].numberOfRemainingUses}} </p>
-                <p class="slds-truncate" >Remaining Uses: {{this.pantsService.allPants[this.selectedPantsIndex].currentRemainingNumberOfUses}}</p>
+                <p class="slds-truncate" >Remaining Uses: {{this.currentPants.currentRemainingNumberOfUses}} out of {{this.currentPants.numberOfRemainingUses}}</p>
               </div>
             </article>
           </li>
           </div>
           <div class='slds-col'>
-            <button type="button" class="slds-button slds-button--brand" (click)="hidePantsCard()"> Remove Pants Selection </button>
+            <button type="button" class="slds-button slds-button--brand" style="position:relative; top:80px; left:-250px;" (click)="hidePantsCard()"> Remove Pants Selection </button>
           </div>
         </div>
         <div *ngIf="!showUnderwearCard">
@@ -57,7 +57,7 @@
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearUnderwear()"> Ok </button>
         </div>
-        <div class="slds-grid" *ngIf="showUnderwearCard">
+        <div class="slds-grid" style="height:1.8in;"  *ngIf="showUnderwearCard">
           <div class='slds-col'>           
           <li class="slds-item homebutton" >            
             <article class="slds-tile slds-tile_board">
@@ -66,13 +66,13 @@
                 <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentUnderwear.color-1]}}
                 <p class="slds-text-heading_medium">Type: {{this.clothingUnderwearTypeNames[this.currentUnderwear.underwearType-1]}} </p>
                 <p class="slds-truncate">Maximum Uses: {{this.underwearService.allUnderwear[this.selectedUnderwearIndex].numberOfRemainingUses}}
-                <p class="slds-truncate">Remaining Uses: {{this.underwearService.allUnderwear[this.selectedUnderwearIndex].currentRemainingNumberOfUses}}</p>
+                <p class="slds-truncate">Remaining Uses: {{this.currentUnderwear.currentRemainingNumberOfUses}} out of {{this.currentUnderwear.numberOfRemainingUses}}</p>
               </div>
             </article>
           </li>
           </div>
           <div class='slds-col'> 
-            <button type="button" class="slds-button slds-button--brand" (click)="hideUnderwearCard()"> Remove Underwear Selection </button>
+            <button type="button" class="slds-button slds-button--brand" style="position:relative; top:80px; left:-250px;" (click)="hideUnderwearCard()"> Remove Underwear Selection </button>
           </div>
         </div>
         <div *ngIf="!showSocksCard">
@@ -81,7 +81,7 @@
           </select>
           <button type="button" class="slds-button slds-button--brand" (click)="wearSocks()"> Ok </button>
         </div>
-        <div class="slds-grid" *ngIf="showSocksCard">
+        <div class="slds-grid" style="height:1.8in;"  *ngIf="showSocksCard">
           <div class='slds-col'> 
           <li class="slds-item homebutton" >            
             <article class="slds-tile slds-tile_board">
@@ -90,13 +90,13 @@
                 <p class="slds-text-heading_medium">Color: {{this.clothingColorNames[this.currentSocks.color-1]}} </p>
                 <p class="slds-text-heading_medium">Type: {{this.clothingSockTypeNames[this.currentSocks.sockType-1]}} </p>
                 <p class="slds-truncate">Maximum Uses: {{this.sockService.allSocks[this.selectedSocksIndex].numberOfRemainingUses}}</p>
-                <p class="slds-truncate">Remaining Uses: {{this.sockService.allSocks[this.selectedSocksIndex].currentRemainingNumberOfUses}}</p>
+                <p class="slds-truncate">Remaining Uses: {{this.currentSocks.currentRemainingNumberOfUses}} out of {{this.currentSocks.numberOfRemainingUses}}</p>
               </div>
             </article>
           </li>
           </div>
           <div class='slds-col'> 
-              <button type="button" class="slds-button slds-button--brand" (click)="hideSocksCard()"> Remove Sock Selection </button>
+              <button type="button" class="slds-button slds-button--brand" style="position:relative; top:80px; left:-250px;" (click)="hideSocksCard()"> Remove Sock Selection </button>
           </div>
         </div>
       </form>
@@ -154,7 +154,7 @@
       </div>  
 
       </div>
-      <div class=".slds-text-heading_medium slds-col ">
+      <div class=".slds-text-heading_medium slds-col " style="font-size:20pt">
          Cleanliness Rating: {{this.currentCleanlinessValue}}%
          <div *ngIf='dankRating === 1'>
          <img src="/assets/images/FilthyAnimal.png" alt=""/>
